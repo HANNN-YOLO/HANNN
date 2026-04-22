@@ -49,13 +49,23 @@ form?.addEventListener('submit', async (event) => {
         submitButton.textContent = 'SENDING...';
         setStatus('Mengirim pesan...', null);
 
-        await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+        const formData = new FormData(form);
+        const templateParams = {
+            name: formData.get('name') || '',
+            email: formData.get('email') || '',
+            subject: formData.get('subject') || '',
+            title: formData.get('subject') || '',
+            message: formData.get('message') || '',
+            reply_to: formData.get('email') || '',
+        };
+
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
 
         form.reset();
-        setStatus('Pesan berhasil dikirim ke Gmail yang kamu atur di EmailJS.', 'is-success');
+        setStatus('Pesan berhasil dikirim', 'is-success');
     } catch (error) {
         console.error('EmailJS error:', error);
-        setStatus('Pesan gagal dikirim. Cek service, template, dan public key EmailJS.', 'is-error');
+        setStatus('Pesan gagal dikirim', 'is-error');
     } finally {
         submitButton.disabled = false;
         submitButton.textContent = 'SEND MESSAGE';
