@@ -537,6 +537,10 @@ body {
     --logo-bg: #ffffff;
 }
 
+.project-logo-todolist {
+    --logo-bg: #ffffff;
+}
+
 .project-logo-calculator {
     --logo-bg: #ffffff;
 }
