@@ -349,6 +349,55 @@ body {
     margin: 0;
 }
 
+/* Experience Section */
+.experience {
+    padding: 100px 8%;
+    background: #000000;
+}
+
+.experience-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px;
+}
+
+.experience-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.experience-title {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.experience-item {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 189, 57, 0.1);
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+}
+
+.experience-item h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.experience-item .company {
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.experience-item .description {
+    margin: 0;
+}
+
 /* Services Section */
 .services {
     padding: 100px 8%;
@@ -583,6 +632,13 @@ body {
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 12px;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 15px;
 }
 
 .project-link {
