@@ -610,6 +610,21 @@ body {
     transform-origin: center;
 }
 
+.project-logo-microsoftoffice {
+    --logo-bg: #ffffff;
+    padding: 0;
+}
+
+.project-logo-microsoftoffice img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
 .project-logo {
     display: none;
 }
